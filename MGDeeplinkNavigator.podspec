@@ -30,7 +30,17 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'MGDeeplinkNavigator/Classes/**/*.{swift,m,h}'
+  s.default_subspec = 'eeplinkNavigator'
+
+  s.subspec 'DeeplinkNavigator' do |extension|
+    extension.source_files = 'MGDeeplinkNavigator/Classes/MGDeeplinkNavigator/*.{swift,m,h}'
+  end
+
+  s.subspec 'MGDeeplinkNavigator_Extension' do |extension|
+    extension.source_files = 'MGDeeplinkNavigator/Classes/Extension/*.{swift,m,h}'
+    extension.dependency 'RxCocoa'
+    extension.dependency 'MGDeeplinkNavigator/DeeplinkNavigator'
+  end
   
   # s.resource_bundles = {
   #   'MGDeeplinkNavigator' => ['MGDeeplinkNavigator/Assets/*.png']

@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'MGDeeplinkNavigator_Example' do
-  pod 'MGDeeplinkNavigator', :path => '../'
+  pod 'MGDeeplinkNavigator/MGDeeplinkNavigator_Extension', :path => '../'
 
   target 'MGDeeplinkNavigator_Tests' do
     inherit! :search_paths
