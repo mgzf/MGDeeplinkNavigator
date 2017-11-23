@@ -1,0 +1,22 @@
+PODS:
+  - MGDeeplinkNavigator (0.1.0)
+  - Nimble (7.0.2)
+  - Quick (1.2.0)
+
+DEPENDENCIES:
+  - MGDeeplinkNavigator (from `../`)
+  - Nimble (~> 7.0.2)
+  - Quick (~> 1.2.0)
+
+EXTERNAL SOURCES:
+  MGDeeplinkNavigator:
+    :path: ../
+
+SPEC CHECKSUMS:
+  MGDeeplinkNavigator: 446844f7ef560832526b60f431bc1c541965a11e
+  Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+
+PODFILE CHECKSUM: 80c984d048477a00b7ce5a67b6a3a9614ec21b29
+
+COCOAPODS: 1.3.1
