@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  MGDeeplinkNavigator: 36a54954676b1f840fea6d28702624dfb01250d5
+  MGDeeplinkNavigator: 498a75fc83a842ac1f9128c51e73b758e9f816ac
   Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e

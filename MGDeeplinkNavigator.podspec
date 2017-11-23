@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.default_subspec = 'eeplinkNavigator'
+  s.default_subspec = 'DeeplinkNavigator'
 
   s.subspec 'DeeplinkNavigator' do |extension|
     extension.source_files = 'MGDeeplinkNavigator/Classes/MGDeeplinkNavigator/*.{swift,m,h}'
