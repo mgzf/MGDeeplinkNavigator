@@ -25,9 +25,6 @@
 //
 
 import UIKit
-import RxCocoa
-import RxSwift
-
 //MARK: - 偷换系统方法啦
 
 func swizzleMethod(_ cls: Swift.AnyClass!,_ originalSelector:Selector,_ swizzledSelector:Selector){
@@ -82,23 +79,21 @@ extension UIApplication{
 extension UIViewController{
    
     public static func awake(){
-//        swizzleMethod(self, #selector(UIViewController.loadView), #selector(UIViewController.mg_loadView))
+        swizzleMethod(self, #selector(UIViewController.viewDidLoad), #selector(UIViewController.mg_viewDidLoad))
     }
     
-//    func mg_loadView() {
-//        self.mg_loadView()
-//        if let lifeCycle = self as? LifeCycleable{
-//            self.rx.methodInvoked(#selector(viewDidLoad))
-//                .subscribe(onNext: {
-//                [weak lifeCycle](_) in
-//                guard let `lifeCycle` = lifeCycle else { return }
-//                if let navigation = lifeCycle.navigation{
-//                    lifeCycle.navigationLoad(parameter: navigation.parameter, needRequest: navigation.needRequest)
-//                    lifeCycle.navigation = nil
-//                }
-//            }).disposed(by: self.rx.disposeBag)
-//        }
-//    }
+    @objc func mg_viewDidLoad() {
+        self.mg_viewDidLoad()
+        OperationQueue.main.addOperation({
+            if let lifeCycle = self as? LifeCycleable{
+                if let navigation = lifeCycle.navigation{
+                    lifeCycle.navigationLoad(parameter: navigation.parameter, needRequest: navigation.needRequest)
+                    lifeCycle.navigation = nil
+                }
+                
+            }
+        })
+    }
     
 }
 

@@ -1,13 +1,9 @@
 PODS:
-  - MGDeeplinkNavigator/DeeplinkNavigator (0.0.1)
-  - MGDeeplinkNavigator/MGDeeplinkNavigator_Extension (0.0.1):
+  - MGDeeplinkNavigator/DeeplinkNavigator (0.0.2)
+  - MGDeeplinkNavigator/MGDeeplinkNavigator_Extension (0.0.2):
     - MGDeeplinkNavigator/DeeplinkNavigator
-    - RxCocoa
   - Nimble (7.0.2)
   - Quick (1.2.0)
-  - RxCocoa (4.0.0):
-    - RxSwift (~> 4.0)
-  - RxSwift (4.0.0)
 
 DEPENDENCIES:
   - MGDeeplinkNavigator/MGDeeplinkNavigator_Extension (from `../`)
@@ -19,11 +15,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  MGDeeplinkNavigator: 498a75fc83a842ac1f9128c51e73b758e9f816ac
+  MGDeeplinkNavigator: c1ab15a9f100d4cb8cfe600cb53aa89ed1eb47f2
   Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
-  RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
-  RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
 
 PODFILE CHECKSUM: 914dcd8e2650b9681048b2428cdba686630d1c6f
 

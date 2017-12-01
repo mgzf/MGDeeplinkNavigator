@@ -345,14 +345,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MGDeeplinkNavigator_Example/Pods-MGDeeplinkNavigator_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MGDeeplinkNavigator/MGDeeplinkNavigator.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGDeeplinkNavigator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
