@@ -10,24 +10,24 @@ import Foundation
 
 //MARK: - Init方法初始化 InitLifeCycleable可以接在ViewController的头上
 
-public protocol InitLifeCycleable : LifeCycleable, InitNavigable{
+public protocol MGInitLifeCycleable : MGLifeCycleable, InitNavigable{
     
 }
 
 //MARK: - Xib方法初始化 XibLifeCycleable可以接在ViewController的头上 如果使用默认初始化必须保证Identifier为类名
 
-public protocol XibLifeCycleable : LifeCycleable, XibNavigable{
+public protocol MGXibLifeCycleable : MGLifeCycleable, XibNavigable{
     
 }
 
 //MARK: - Storyboard方法初始化 StoryboardLifeCycleable可以接在ViewController的头上
 
-public protocol StoryboardLifeCycleable : LifeCycleable, StoryboardNavigable{
+public protocol MGStoryboardLifeCycleable : MGLifeCycleable, StoryboardNavigable{
     
     static func viewControllerFromStoryBoard(navigation: DeeplinkNavigation) -> UIViewController?
 }
 
-extension InitLifeCycleable  where Self : UIViewController {
+extension MGLifeCycleable  where Self : UIViewController {
     
     public init?(navigation: DeeplinkNavigation) {
         self.init()
@@ -35,10 +35,18 @@ extension InitLifeCycleable  where Self : UIViewController {
     }
 }
 
-extension XibLifeCycleable  where Self : UIViewController {
-    
+extension MGXibLifeCycleable  where Self : UIViewController {
+    //MARK: - 必须保证Xib在class的bundle或者在Resources名字的Budle里面 不然你就重写吧
     public static func viewControllerFromXib(navigation: DeeplinkNavigation) -> UIViewController?{
-        let vc = self.init(nibName: String(describing: self), bundle: nil)
+        var bundle: Bundle?
+        if let pathBundle = Bundle(for: self.classForCoder())
+            .path(forResource: "Resources", ofType: "bundle") {
+            bundle = Bundle(path: pathBundle)
+        }
+        if bundle == nil {
+            bundle = Bundle(for: self.classForCoder())
+        }
+        let vc = self.init(nibName: String(describing: self), bundle: bundle)
         vc.navigation = navigation
         return  vc
     }

@@ -94,7 +94,7 @@ public extension DeeplinkNavigator {
             if let viewController = navigationController.viewControllers.reversed().first(where: { (vc) -> Bool in
                 return vc.classForCoder == vcType
             }) {
-                if let lifeCycle = viewController as? LifeCycleable{
+                if let lifeCycle = viewController as? MGLifeCycleable{
                     let navigation = DeeplinkNavigation(
                         url: url,
                         values: urlMatchComponents.values,

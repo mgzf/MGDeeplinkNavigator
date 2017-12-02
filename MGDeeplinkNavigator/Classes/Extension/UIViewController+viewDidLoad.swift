@@ -85,7 +85,7 @@ extension UIViewController{
     @objc func mg_viewDidLoad() {
         self.mg_viewDidLoad()
         OperationQueue.main.addOperation({
-            if let lifeCycle = self as? LifeCycleable{
+            if let lifeCycle = self as? MGLifeCycleable{
                 if let navigation = lifeCycle.navigation{
                     lifeCycle.navigationLoad(parameter: navigation.parameter, needRequest: navigation.needRequest)
                     lifeCycle.navigation = nil

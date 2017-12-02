@@ -28,7 +28,7 @@ import UIKit
 
 //MARK: - 内部使用加了生命周期 外界不用调用
 
-public protocol LifeCycleable : class {
+public protocol MGLifeCycleable : class {
     
     var navigation:DeeplinkNavigation?{ get set }
     
@@ -38,7 +38,7 @@ public protocol LifeCycleable : class {
 
 private var navigationKey: Void?
 
-public extension LifeCycleable {
+public extension MGLifeCycleable {
     
     public var navigation:DeeplinkNavigation?{
         get{
