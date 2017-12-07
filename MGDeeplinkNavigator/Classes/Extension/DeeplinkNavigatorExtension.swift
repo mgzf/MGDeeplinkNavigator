@@ -84,6 +84,29 @@ public extension DeeplinkNavigator {
         return reloadViewController(url: url, context: context , from: from)
     }
     
+    
+    /// 获得堆栈中已有的VC
+    ///
+    /// - Parameters:
+    ///   - url: 路径嘛
+    ///   - from: 来自哪里呗
+    /// - Returns: VC
+    @discardableResult
+    public func stackViewController(url: DeeplinkConvertible,
+                                    from: DeeplinkPushable? = nil) -> UIViewController? {
+        if let urlMatchComponents = DeeplinkMatcher.default.match(url, scheme: self.scheme, from: Array(self.urlMap.keys)) {
+            guard let item = self.urlMap[urlMatchComponents.pattern] else { return nil }
+            guard let vcType = item.navigable as? UIViewController.Type else { return nil }
+            guard let navigationController = from?.lhw_navigationController ?? UIViewController.lhw_topMost?.navigationController else { return nil }
+            if let viewController = navigationController.viewControllers.reversed().first(where: { (vc) -> Bool in
+                return vc.classForCoder == vcType
+            }) {
+                return viewController
+            }
+        }
+        return nil
+    }
+    
     fileprivate func reloadViewController(url: DeeplinkConvertible,
                                        context: NavigationContext? = nil,
                                        from: DeeplinkPushable? = nil) -> UIViewController?{
