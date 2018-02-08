@@ -61,8 +61,14 @@ extension UIViewController {
         
         for window in currentWindows {
             if let windowRootViewController = window.rootViewController {
-                rootViewController = windowRootViewController
-                break
+                let classDesc = windowRootViewController.classForCoder.description()
+                if classDesc.contains("SFSafariViewController") {
+                    window.isHidden = true
+                }
+                else {
+                    rootViewController = windowRootViewController
+                    break
+                }
             }
         }
         
