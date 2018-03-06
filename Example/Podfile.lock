@@ -1,6 +1,6 @@
 PODS:
-  - MGDeeplinkNavigator/DeeplinkNavigator (0.0.2)
-  - MGDeeplinkNavigator/MGDeeplinkNavigator_Extension (0.0.2):
+  - MGDeeplinkNavigator/DeeplinkNavigator (0.0.4)
+  - MGDeeplinkNavigator/MGDeeplinkNavigator_Extension (0.0.4):
     - MGDeeplinkNavigator/DeeplinkNavigator
   - Nimble (7.0.2)
   - Quick (1.2.0)
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  MGDeeplinkNavigator: c1ab15a9f100d4cb8cfe600cb53aa89ed1eb47f2
+  MGDeeplinkNavigator: 2bfbc5ba4e9b649e867815be98ed513c9611f7e4
   Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
 
